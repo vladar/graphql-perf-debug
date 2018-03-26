@@ -1,0 +1,24 @@
+parameters:
+    pim_research.infrastructure.delivery.api.graphql.loader.attribute_loader.class: Pim\Bundle\ResearchBundle\Infrastructure\Delivery\API\GraphQL\Loader\AttributeLoader
+    pim_research.infrastructure.delivery.api.graphql.loader.channel_loader.class: Pim\Bundle\ResearchBundle\Infrastructure\Delivery\API\GraphQL\Loader\ChannelLoader
+    pim_research.infrastructure.delivery.api.graphql.loader.locale_loader.class: Pim\Bundle\ResearchBundle\Infrastructure\Delivery\API\GraphQL\Loader\LocaleLoader
+
+services:
+    pim_research.infrastructure.delivery.api.graphql.loader.attribute_loader:
+        class: '%pim_research.infrastructure.delivery.api.graphql.loader.attribute_loader.class%'
+        arguments:
+           - '@overblog_dataloader.webonyx_graphql_sync_promise_adapter'
+           - '@pim_research.infrastructure.persistence.database.database_attribute_repository'
+
+    pim_research.infrastructure.delivery.api.graphql.loader.channel_loader:
+        class: '%pim_research.infrastructure.delivery.api.graphql.loader.channel_loader.class%'
+        arguments:
+           - '@overblog_dataloader.webonyx_graphql_sync_promise_adapter'
+           - '@pim_research.infrastructure.persistence.database.database_channel_repository'
+
+    pim_research.infrastructure.delivery.api.graphql.loader.locale_loader:
+        class: '%pim_research.infrastructure.delivery.api.graphql.loader.locale_loader.class%'
+        arguments:
+           - '@overblog_dataloader.webonyx_graphql_sync_promise_adapter'
+           - '@pim_research.infrastructure.persistence.database.database_locale_repository'
+

@@ -1,0 +1,25 @@
+overblog_dataloader:
+    defaults:
+        promise_adapter: "overblog_dataloader.webonyx_graphql_sync_promise_adapter"
+        options:
+            batch: true
+            cache: true
+            max_batch_size: 10000
+            cache_map: "overblog_dataloader.cache_map"
+
+    loaders:
+        attributes:
+            alias: "attribute_dataloader"
+            batch_load_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.attribute_loader:load"
+            options:
+                cache_key_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.attribute_loader:key"
+        channels:
+            alias: "channel_dataloader"
+            batch_load_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.channel_loader:load"
+            options:
+                cache_key_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.channel_loader:key"
+        locale:
+            alias: "locale_dataloader"
+            batch_load_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.locale_loader:load"
+            options:
+                cache_key_fn: "@pim_research.infrastructure.delivery.api.graphql.loader.locale_loader:key"

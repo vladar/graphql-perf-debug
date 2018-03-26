@@ -1,0 +1,30 @@
+parameters:
+    pim_research.infrastructure.persistence.in_memory.in_memory_family_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryFamilyRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_product_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryProductRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_attribute_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryAttributeRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_locale_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryLocaleRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_currency_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryCurrencyRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_channel_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryChannelRepository
+    pim_research.infrastructure.persistence.in_memory.in_memory_category_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryCategoryRepository
+
+services:
+    pim_research.domain_model.family.family_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_family_repository.class%'
+
+    pim_research.domain_model.product.product_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_product_repository.class%'
+
+    pim_research.domain_model.attribute.attribute_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_attribute_repository.class%'
+
+    pim_research.domain_model.locale.locale_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_locale_repository.class%'
+
+    pim_research.domain_model.currency.currency_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_currency_repository.class%'
+
+    pim_research.domain_model.channel.channel_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_channel_repository.class%'
+
+    pim_research.domain_model.category.category_repository:
+        class: '%pim_research.infrastructure.persistence.in_memory.in_memory_category_repository.class%'

@@ -1,0 +1,4 @@
+graphql:
+    path: /graphql
+    defaults: { _controller: pim_research.infrastructure.delivery.http.graphql:handleGraphQLRequest, _format: json }
+    methods: [GET, POST]

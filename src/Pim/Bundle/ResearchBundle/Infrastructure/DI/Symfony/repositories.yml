@@ -1,0 +1,44 @@
+parameters:
+    pim_research.infrastructure.persistence.database.database_family_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseFamilyRepository
+    pim_research.infrastructure.persistence.database.database_product_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseProductRepository
+    pim_research.infrastructure.persistence.database.database_attribute_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseAttributeRepository
+    pim_research.infrastructure.persistence.database.database_locale_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseLocaleRepository
+    pim_research.infrastructure.persistence.database.database_currency_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseCurrencyRepository
+    pim_research.infrastructure.persistence.database.database_channel_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseChannelRepository
+    pim_research.infrastructure.persistence.database.database_category_repository.class:  Pim\Bundle\ResearchBundle\Infrastructure\Persistence\Database\DatabaseCategoryRepository
+
+services:
+    pim_research.domain_model.family.family_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_family_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.domain_model.product.product_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_product_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.infrastructure.persistence.database.database_attribute_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_attribute_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.infrastructure.persistence.database.database_locale_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_locale_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.domain_model.currency.currency_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_currency_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.infrastructure.persistence.database.database_channel_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_channel_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.domain_model.category.category_repository:
+        class: '%pim_research.infrastructure.persistence.database.database_category_repository.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'

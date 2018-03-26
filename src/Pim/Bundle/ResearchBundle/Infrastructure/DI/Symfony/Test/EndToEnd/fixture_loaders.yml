@@ -1,0 +1,44 @@
+parameters:
+    pim_research.fixtures.family_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\FamilyLoader
+    pim_research.fixtures.attribute_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\AttributeLoader
+    pim_research.fixtures.locale_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\LocaleLoader
+    pim_research.fixtures.currency_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\CurrencyLoader
+    pim_research.fixtures.channel_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\ChannelLoader
+    pim_research.fixtures.category_loader.class: Pim\Bundle\ResearchBundle\tests\fixtures\EntityLoader\Database\CategoryLoader
+    pim_research.fixtures.reset_database.class: Pim\Bundle\ResearchBundle\tests\fixtures\ResetDatabase
+
+services:
+    pim_research.fixtures.family_loader:
+        class: '%pim_research.fixtures.family_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.attribute_loader:
+        class: '%pim_research.fixtures.attribute_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.locale_loader:
+        class: '%pim_research.fixtures.locale_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.currency_loader:
+        class: '%pim_research.fixtures.currency_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.channel_loader:
+        class: '%pim_research.fixtures.channel_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.category_loader:
+        class: '%pim_research.fixtures.category_loader.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    pim_research.fixtures.reset_database:
+        class: '%pim_research.fixtures.reset_database.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
