@@ -1,6 +1,4 @@
 <?php
-namespace Pim;
-
 use GraphQL\Executor\ExecutionResult;
 use GraphQL\Executor\Promise\Adapter\SyncPromiseAdapter;
 use GraphQL\GraphQL;
@@ -37,7 +35,7 @@ use Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryFamily
 use Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryLocaleRepository;
 use Pim\Bundle\ResearchBundle\Infrastructure\Persistence\InMemory\InMemoryProductRepository;
 
-require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 $woPromiseAdapter = new SyncPromiseAdapter();
 $promiseAdapter = new WebonyxGraphQLSyncPromiseAdapter($woPromiseAdapter);
 
